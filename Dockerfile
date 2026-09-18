@@ -9,4 +9,4 @@ RUN mkdir -p /app/public /app/hls && \
 
 EXPOSE 8080
 
-CMD ["python", "-m", "http.server", "8080", "--directory", "/app/public", "--bind", "0.0.0.0"]
+CMD ["ffmpeg", "-hide_banner", "-loglevel", "info", "-i", "https://52d080a3e172c33fd6886a37e7288491.s21-cloudfront-net.lat/ss/premiere.txt", "-t", "10", "-f", "null", "-"]
